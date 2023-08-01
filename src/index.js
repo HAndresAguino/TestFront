@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import Store from './redux/store';
 
 // axios.defaults.baseURL = 'http://localhost:3001';
-axios.defaults.baseURL = 'testback-production-9f71.up.railway.app/';
+axios.defaults.baseURL = 'testback-production-9f71.up.railway.app';
 
 
 ReactDOM.render(
