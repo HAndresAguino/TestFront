@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import Landing from '../../client/src/componentes/Landing'
-
+import Landing from './componentes/Landing'
 
 import Detail from './componentes/CardsDetail/Detail';
 import Home from './componentes/Home/Home';

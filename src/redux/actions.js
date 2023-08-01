@@ -36,7 +36,7 @@ export const getAllpokemons = () => {
     return async function (dispatch) {
         try {
             dispatch(loader(true)) //Despacha el loader para animar al cargar los pokemons
-            let json = await axios.get('http://localhost:3001/pokemons');
+            let json = await axios.get('/pokemons');
             return dispatch({ type: GET_ALL_POKEMONS, payload: json.data })
         } catch (error) {
             console.log(error.message);
@@ -47,7 +47,7 @@ export const getAllpokemons = () => {
 export const getTypes = () => {
     return async function (dispatch) {
         try {
-            let json = await axios.get(`http://localhost:3001/types`)
+            let json = await axios.get(`/types`)
             return dispatch({ type: GET_TYPES, payload: json.data })
         } catch (error) {
 
@@ -58,7 +58,7 @@ export const getTypes = () => {
 export const postPokemon = (payload) => {
     return async function (dispatch) {
         try {
-            let json = await axios.post('http://localhost:3001/pokemons', payload);
+            let json = await axios.post('/pokemons', payload);
             return dispatch({ type: POST_POKEMON, payload: json.data });
         } catch (error) {
             console.log("Error con posPokemon", error);
@@ -70,7 +70,7 @@ export const postPokemon = (payload) => {
 
 export const getPokemonDetail = (id) => {
     return async function (dispatch) {
-        let response = await axios.get(`http://localhost:3001/pokemons/${id}`)
+        let response = await axios.get(`/pokemons/${id}`)
         return dispatch({ type: GET_POKEMON_DETAIL, payload: response.data })
     }
 }
@@ -78,7 +78,7 @@ export const getPokemonDetail = (id) => {
 export const getAllpokemonsName = (name) => {
     return async function (dispatch) {
         try {
-            let json = await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+            let json = await axios.get(`/pokemons?name=${name}`)
             return dispatch({
                 type: GET_POKEMON_FOR_NAME, payload: json.data
             })
